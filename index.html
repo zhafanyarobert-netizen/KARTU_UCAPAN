@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD Sodd</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body style="background-image: url(https://plus.unsplash.com/premium_photo-1668091148044-056cd744e64a?q=80&w=1190&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);" 
+class="flex justify-center h-screen items-center">
+    
+
+    <div class="bg-blue-200 border px-10 py-8 border-4 border-gray-500  shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8 w-80" id="Kartu">
+        <h1 class="text-3xl">Happy Birthday🎉</h1>
+        <h1 class="text-2xl font-bold animate__animated animate__pulse animate__infinite">- 🌸Ivora🌸 -</h1>
+        <button class="p-2 bg-blue-400 font-bold rounded mt-5 hover:bg-blue-600 transition ease-in w-full animate__animated animate__delay-1s animate__tada" onclick="ubahKartu()">Klik Disini</button>
+    </div>
+   <audio id="bgMusic" loop>
+    <source src="bestday.mp3" type="audio/mpeg">
+</audio>
+   
+     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+            <script>
+                confetti({
+  particleCount: 100,
+  spread: 70,
+  origin: { y: .6 }
+});
+let kartu = document.getElementById("Kartu");
+let halaman = 0;
+
+function ubahKartu() {
+
+    if (halaman === 0) {
+        document.getElementById("bgMusic").play();
+
+        kartu.innerHTML = `
+        <h1 class="text-xl font-bold animate__animated animate__fadeIn">
+           🌸 HBD 🌸
+        </h1>
+
+        <p class="mt-3">
+           Ciee ada yang udah 19 tahun nii🙀😎
+           hehehe selamat ulang tahun yaa Ivooo❤️
+        </p>
+
+        <button class="mt-5 p-2 bg-blue-400 rounded w-full"
+        onclick="ubahKartu()">
+            Lanjut ➜
+        </button>
+        `;
+
+        halaman++;
+    }
+
+    else if (halaman === 1) {
+
+        kartu.innerHTML = `
+        <h1 class="text-xl font-bold animate__animated animate__fadeIn">
+             Thank You💫 
+        </h1>
+
+        <p class="mt-3">
+            Makasih yaa udah mau jadi teman ku Sodd
+            wkwkwkwk gacor lah🔥
+        </p>
+
+        <button class="mt-5 p-2 bg-blue-400 rounded w-full"
+        onclick="ubahKartu()">
+            Lanjut ➜
+        </button>
+        `;
+
+        halaman++;
+      }
+    else if (halaman === 2) {
+
+        kartu.innerHTML = `
+        <h1 class="text-xl font-bold animate__animated animate__fadeIn">
+            For You 🫶🏼
+        </h1>
+
+        <p class="mt-3">
+            Tuhan memberkati dan menyertai selalu, semoga apa yang menjadi harapan Ivoo kedepannya dapat tercapai✨
+            Aminnnn...
+        </p>
+
+        <button class="mt-5 p-2 bg-blue-400 rounded w-full"
+        onclick="ubahKartu()">
+            Lanjut ➜
+        </button>
+        `;
+
+        halaman++;
+    }
+
+    else if (halaman === 3) {
+
+        kartu.innerHTML = `
+        <h1 class="text-xl font-bold animate__animated animate__fadeIn">
+            Salam Hangat ☀️
+        </h1>
+
+        <p class="mt-3 ani">
+            Sehat selalu yaa Voo, tetap semangat menjalani perkuliahan nya, 
+            sampai ketemu lagi Vooo🤗
+        </p>
+
+        <h2 class="mt-3 animate__animated animate__fadeIn">- Dari : Alin😁 -</h2>
+
+        <button class="mt-5 p-2 bg-slate-400 rounded w-full"
+        onclick="refresh()">
+            Tutup
+        </button>
+          ` ;
+} }
+
+function refresh() {
+        location.reload();
+      }
+      </script>
+</body>
+</html>
